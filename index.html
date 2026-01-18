@@ -1,610 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Noah van Potten — Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="./lib/IMG/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./lib/images/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7' }
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                500: "#0ea5e9",
+                600: "#0284c7",
+              },
+            },
+          },
+        },
+      };
     </script>
     <style>
-        .menu-bar-list-item-text {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .menu-bar-list-item-text:hover {
-            transform: translateY(-1px);
-        }
-        .menu-bar-list-item-text.bg-brand-500 {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
-        }
+      .menu-bar-list-item-text {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .menu-bar-list-item-text:hover {
+        transform: translateY(-1px);
+      }
+      .menu-bar-list-item-text.bg-brand-500 {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+      }
     </style>
-</head>
-<body class="min-h-svh bg-neutral-950 text-neutral-200 antialiased">
+  </head>
+  <body class="min-h-svh bg-neutral-950 text-neutral-200 antialiased">
     <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
-        <div class="absolute inset-0 bg-gradient-to-b from-neutral-900/40 via-neutral-950 to-neutral-950"></div>
-        <div class="absolute left-1/2 top-[-200px] h-[600px] w-[1200px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(14,165,233,0.25),transparent)] blur-3xl"></div>
-        </div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-neutral-900/40 via-neutral-950 to-neutral-950"
+      ></div>
+      <div
+        class="absolute left-1/2 top-[-200px] h-[600px] w-[1200px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(14,165,233,0.25),transparent)] blur-3xl"
+      ></div>
+    </div>
 
-    <header id="menu-bar" class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60">
-        <nav class="mx-auto flex max-w-6xl items-center justify-center px-4 py-4">
-            <ul id="menu-bar-list" class="hidden items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 shadow-sm shadow-black/30 md:flex">
-                <li><a href="#skills" data-nav class="menu-bar-list-item-text flex items-center gap-2 rounded-full px-4 py-2 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-                    Skills
-                </a></li>
-                <li><a href="#projects" data-nav class="menu-bar-list-item-text flex items-center gap-2 rounded-full px-4 py-2 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-                    Projects
-                </a></li>
-                <li><a href="#experience" data-nav class="menu-bar-list-item-text flex items-center gap-2 rounded-full px-4 py-2 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                    Experience
-                </a></li>
-                <li><a href="#education" data-nav class="menu-bar-list-item-text flex items-center gap-2 rounded-full px-4 py-2 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-                    Education
-                </a></li>
-                <li><a href="#about" data-nav class="menu-bar-list-item-text flex items-center gap-2 rounded-full px-4 py-2 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                    About
-                </a></li>
-                <li><a href="#resume" data-nav class="menu-bar-list-item-text flex items-center gap-2 rounded-full px-4 py-2 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    Resumé
-                </a></li>
-                <li><a href="#contact" data-nav class="menu-bar-list-item-text flex items-center gap-2 rounded-full px-4 py-2 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    Contact
-                </a></li>
-            </ul>
-            <button class="md:hidden inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-neutral-300" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')">Menu</button>
-        </nav>
-        <div id="mobile-nav" class="mx-auto hidden max-w-6xl px-4 pb-4 md:hidden">
-            <ul class="grid gap-2 rounded-2xl border border-white/10 bg-white/5 p-2">
-                <li><a href="#skills" data-nav class="flex items-center gap-2 rounded-xl px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-                    Skills
-                </a></li>
-                <li><a href="#projects" data-nav class="flex items-center gap-2 rounded-xl px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-                    Projects
-                </a></li>
-                <li><a href="#experience" data-nav class="flex items-center gap-2 rounded-xl px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                    Experience
-                </a></li>
-                <li><a href="#education" data-nav class="flex items-center gap-2 rounded-xl px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-                    Education
-                </a></li>
-                <li><a href="#about" data-nav class="flex items-center gap-2 rounded-xl px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                    About
-                </a></li>
-                <li><a href="#resume" data-nav class="flex items-center gap-2 rounded-xl px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    Resumé
-                </a></li>
-                <li><a href="#contact" data-nav class="flex items-center gap-2 rounded-xl px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    Contact
-                </a></li>
-        </ul>
-        </div>
-    </header>
-
-    <main class="mx-auto max-w-6xl px-4">
-        <section id="hero" class="flex flex-col items-center justify-center gap-6 py-16 text-center md:py-24">
-            <img src="./lib/IMG/profile-picture.jfif" alt="profile" class="h-28 w-28 rounded-full ring-2 ring-white/10">
-            <h1 class="text-3xl font-semibold tracking-tight text-white md:text-5xl">Noah van Potten</h1>
-            <p class="max-w-2xl text-balance text-neutral-300 md:text-lg">AI Engineer @ AdamI Amsterdam <br> Creative Technology student @ VU/UTwente
-            </p>
-            <div class="flex flex-wrap items-center justify-center gap-3">
-                <a href="#projects" class="rounded-full bg-brand-500 px-5 py-2.5 text-sm font-medium text-white shadow-sm shadow-black/30 hover:bg-brand-600">View Projects</a>
-                <a href="#contact" class="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-neutral-100 hover:bg-white/10">Contact</a>
-        </div>
-    </section>
-
-        <section id="skills" class="scroll-mt-24 py-12 md:py-16">
-            <div class="mb-8 flex items-center justify-between">
-                <h2 class="text-xl font-semibold text-white md:text-2xl">Skills</h2>
-            </div>
-            <div class="grid gap-6 md:grid-cols-2">
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="mb-4 text-base font-semibold text-white">Programming Languages</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://www.python.org/">Python</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://www.javascript.com/">JavaScript</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://www.java.com/en/">Java</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://learn-microsoft-com.translate.goog/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-8.0&_x_tr_sl=en&_x_tr_tl=nl&_x_tr_hl=nl&_x_tr_pto=sc">C#</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/HTML">HTML</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/CSS">CSS</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/SQL">SQL</a>
-                    </div>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="mb-4 text-base font-semibold text-white">Frameworks & ./libraries</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://flask.palletsprojects.com/en/stable/">Flask</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://nodejs.org/en">Node.js</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://reactnative.dev/docs/environment-setup">React Native</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://p5js.org/">P5.js</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://firebase.google.com/products-build">Firebase</a>
-                    </div>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="mb-4 text-base font-semibold text-white">AI & Machine Learning</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/Large_language_model">LLMs</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/Computer_vision">Computer Vision</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/Reinforcement_learning">Reinforcement Learning</a>
-                    </div>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="mb-4 text-base font-semibold text-white">Hardware & Electronics</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://nl.wikipedia.org/wiki/Microcontroller">Microcontrollers</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/Electronic_circuit">Circuitry</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/Computer_architecture">Computer Architecture</a>
-                    </div>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="mb-4 text-base font-semibold text-white">Design & Development</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://unity.com/">Unity</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/3D_modeling">3D Modeling</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/Prototype">Prototyping</a>
-                    </div>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="mb-4 text-base font-semibold text-white">Soft Skills</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/User-centered_design">User centered design</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="hhttps://en.wikipedia.org/wiki/Public_speaking">Public speaking</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/Git">Git</a>
-                        <a class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10" href="https://en.wikipedia.org/wiki/Agile_software_development">Agile</a>
-                    </div>
-                </div>
-        </div>
-    </section>
-        
-        <section id="projects" class="scroll-mt-24 py-12 md:py-16">
-            <div class="mb-8 flex items-center justify-between">
-                <h2 class="text-xl font-semibold text-white md:text-2xl">Projects</h2>
-            </div>
-            <div class="grid gap-6 md:grid-cols-2">
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div class="flex flex-col gap-3">
-                        <h3 class="text-base font-semibold text-white">Calendar Curator</h3>
-                        <p class="text-xs text-neutral-400">February 2025 - May 2025 (freetime)</p>
-                        <img class="w-full rounded-lg object-cover" src="./lib/IMG/Project9img.png" alt="Calendar Curator image">
-                        <p class="text-sm leading-7 text-neutral-300">Calendar Curator helps declutter personal calendars, especially when importing school schedules. Try it now using the button below.</p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://firebase.google.com/products-build">Firebase</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://www.python.org/">Python</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://flask.palletsprojects.com/en/stable/">Flask</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://www.javascript.com/">Javascript</a>
-                            <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300">HTML</span>
-                            <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300">CSS</span>
-                        </div>
-                <div>
-                            <button class="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600" type="button" onclick="window.location.href='https://www.calendarcurator.com'">see project</button>
-                        </div>
-                </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div class="flex flex-col gap-3">
-                        <h3 class="text-base font-semibold text-white">SnapTag</h3>
-                        <p class="text-xs text-neutral-400">November 2024 - February 2025 (freetime)</p>
-                        <img class="w-full rounded-lg object-cover" src="./lib/IMG/Project8img.png" alt="SnapTag image">
-                        <p class="text-sm leading-7 text-neutral-300">A prototype app that turns physical activity into a photo-based game of tag. Snap a player to tag them; lobbies update in real time.</p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://reactnative.dev/docs/environment-setup">React Native Expo</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://firebase.google.com/products-build">Firebase</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://www.javascript.com/">Javascript</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://en.wikipedia.org/wiki/Artificial_intelligence">AI</a>
-            </div>     
-                <div>
-                            <button class="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600" type="button" onclick="window.location.href='https://expo.dev/preview/update?message=first%20prod%20push&updateRuntimeVersion=1.0.0&createdAt=2024-12-20T18%3A00%3A40.006Z&slug=exp&projectId=7b3ec7f9-38d7-4469-adf4-f4dbfc0eac4d&group=df167b38-68c6-4ba6-b59c-502cda242de5'">see project</button>
-                        </div>
-                </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div class="flex flex-col gap-3">
-                        <h3 class="text-base font-semibold text-white">CrowdTag</h3>
-                        <p class="text-xs text-neutral-400">September 2024 - December 2024 (bachelor)</p>
-                        <video autoplay loop muted class=" w-full rounded-lg object-cover" src="./lib/IMG/Project7img.mp4"></video>
-                        <p class="text-sm leading-7 text-neutral-300">What if you only received photos you appeared in after an event? This demo explores face recognition and AI to deliver just that. Click below to see the full demo.</p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://en.wikipedia.org/wiki/Artificial_intelligence">AI</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://flask.palletsprojects.com/en/stable/">Flask</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://www.python.org/">Python</a>
-                            <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300">HTML</span>
-                            <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300">CSS</span>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://www.javascript.com/">Javascript</a>
-            </div>
-                <div>
-                            <button class="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600" type="button" onclick="window.location.href='https://crowdtag.noahvp.dev'">see project</button>
-                        </div>
-                </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div class="flex flex-col gap-3">
-                        <h3 class="text-base font-semibold text-white">JETBOT</h3>
-                        <p class="text-xs text-neutral-400">February 2024 - April 2024 (bachelor)</p>
-                        <img class=" w-full rounded-lg object-cover" src="./lib/IMG/Project6img.png" alt="JETBOT image">
-                        <p class="text-sm leading-7 text-neutral-300">A large chatbot installation to promote an internal IT chatbot during a planned downtime event. Read the research paper below.</p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://en.wikipedia.org/wiki/Artificial_intelligence">AI</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://unity.com/">Unity</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://en.wikipedia.org/wiki/Computer_architecture">Computer architecture</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://en.wikipedia.org/wiki/3D_modeling">3d modeling</a>
-            </div>
-                <div>
-                            <button class="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600" type="button" onclick="window.open('./lib/docu/Project_Report_The_Wait_Module3_CreaTe.docx')">see project</button>
-                        </div>
-                </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div class="flex flex-col gap-3">
-                        <h3 class="text-base font-semibold text-white">Drone delivery</h3>
-                        <p class="text-xs text-neutral-400">July 2022 - January 2023 (highschool)</p>
-                        <img class=" w-full rounded-lg object-cover" src="./lib/IMG/Project1img.png" alt="Drone delivery image">
-                        <p class="text-sm leading-7 text-neutral-300">Research project exploring the feasibility and complexity of drone delivery, including a working prototype. Read the paper below.</p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://en.wikipedia.org/wiki/Artificial_intelligence">AI</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://unity.com/">Unity</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://nl.wikipedia.org/wiki/Microcontroller">Microcontrollers</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://en.wikipedia.org/wiki/3D_modeling">3d modeling</a>
-            </div>
-                <div>
-                            <button class="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600" type="button" onclick="window.open('./lib/docu/DroneDelivery.docx')">see project</button>
-                        </div>
-                </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div class="flex flex-col gap-3">
-                        <h3 class="text-base font-semibold text-white">WFC map generation</h3>
-                        <p class="text-xs text-neutral-400">July 2022 - August 2023 (highschool)</p>
-                        <img class=" w-full rounded-lg object-cover" src="./lib/IMG/Project2img.png" alt="WFC map generation image">
-                        <p class="text-sm leading-7 text-neutral-300">A rule-based terrain generator inspired by Wave Function Collapse. Generates maps with adjacency constraints.</p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://p5js.org/">P5.js</a>
-                            <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300">HTML</span>
-                            <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300">CSS</span>
-            </div>
-                <div>
-                            <button class="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600" type="button" onclick="window.location.href='https://map.noahvp.dev'">see project</button>
-                        </div>
-                </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div class="flex flex-col gap-3">
-                        <h3 class="text-base font-semibold text-white">Nodejs multiplayer game</h3>
-                        <p class="text-xs text-neutral-400">January 2022 - June 2022 (highschool)</p>
-                        <img class=" w-full rounded-lg object-cover" src="./lib/IMG/Project3img.png" alt="Nodejs multiplayer game image">
-                        <p class="text-sm leading-7 text-neutral-300">A 4‑player browser battle royale built with Node.js and p5.js. Explore the code below.</p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://p5js.org/">P5.js</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://nodejs.org/en">Node.js</a>
-                            <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300">HTML</span>
-                            <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300">CSS</span>
-            </div>
-                <div>
-                            <button class="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600" type="button" onclick="window.location.href='https://github.com/NoahVP/NodeJs-game_specialisatie'">see project</button>
-                        </div>
-                </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div class="flex flex-col gap-3">
-                        <h3 class="text-base font-semibold text-white">8 bit ALU</h3>
-                        <p class="text-xs text-neutral-400">August 2022 - January 2022 (highschool)</p>
-                        <img class=" w-full rounded-lg object-cover" src="./lib/IMG/Project4img.png" alt="8-bit ALU image">
-                        <p class="text-sm leading-7 text-neutral-300">Following Ben Eater’s series, I implemented an 8‑bit ALU on breadboards using discrete ICs. See the tutorials below.</p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://en.wikipedia.org/wiki/Electronic_circuit">Circuitry</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://en.wikipedia.org/wiki/Computer_architecture">Computer architecture</a>
-            </div>     
-                <div>
-                            <button class="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600" type="button" onclick="window.location.href='https://eater.net/8bit/'">see project</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div class="flex flex-col gap-3">
-                        <h3 class="text-base font-semibold text-white">AI learns to drive</h3>
-                        <p class="text-xs text-neutral-400">August 2021 - January 2021 (highschool)</p>
-                        <img class="w-full rounded-lg object-cover" src="./lib/IMG/Project5img.png" alt="AI learns to drive image">
-                        <p class="text-sm leading-7 text-neutral-300">A browser-based AI driving demo where a car learns to avoid obstacles using ray casting and a neural network. Inspired by The Coding Train, with custom mutation and ray-casting functions. Try the live demo below.</p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://en.wikipedia.org/wiki/Artificial_intelligence">AI</a>
-                            <a class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300" href="https://p5js.org/">P5.js</a>
-                        </div>
-                        <div>
-                            <button class="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600" type="button" onclick="window.location.href='https://ai.noahvp.dev'">see project</button>
-                        </div>
-                    </div>
-                </article>
-                </div>
-        </section>
-
-        <section id="experience" class="scroll-mt-24 py-12 md:py-16">
-            <div class="mb-8 flex items-center justify-between">
-                <h2 class="text-xl font-semibold text-white md:text-2xl">Experience</h2>
-            </div>
-            <div class="grid gap-6 md:grid-cols-2">
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <div class="flex items-start justify-between gap-4">
-                <div>
-                            <h3 class="text-base font-semibold text-white">AI Engineer</h3>
-                            <p class="text-sm text-neutral-300">ADAMI</p>
-                        </div>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">Mar 2025 — Present</span>
-                </div>
-                    <p class="mt-3 text-sm leading-7 text-neutral-300">Developing and implementing AI solutions for clients. Designing applications in machine learning and data analysis. Collaborating with clients to translate technological concepts into practical applications.</p>
-                    <div class="mt-3 flex flex-wrap gap-2 text-xs">
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-neutral-300">AI/ML</span>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Data Analysis</span>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Client Relations</span>
-            </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <div class="flex items-start justify-between gap-4">
-                <div>
-                            <h3 class="text-base font-semibold text-white">Teaching Assistant – Programming and Physical Computing</h3>
-                            <p class="text-sm text-neutral-300">Vrije Universiteit Amsterdam</p>
-                        </div>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">Oct 2024 — Mar 2025</span>
-                </div>
-                    <p class="mt-3 text-sm leading-7 text-neutral-300">Guiding first-year Creative Technology students in programming and physical computing. Supporting assignments and projects with Python and Arduino. Providing individual feedback and assistance in developing programming skills.</p>
-                    <div class="mt-3 flex flex-wrap gap-2 text-xs">
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Python</span>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Arduino</span>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Teaching</span>
-            </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <div class="flex items-start justify-between gap-4">
-                <div>
-                            <h3 class="text-base font-semibold text-white">Teaching Assistant – Introduction to Computer Science and Programming</h3>
-                            <p class="text-sm text-neutral-300">Vrije Universiteit Amsterdam</p>
-                        </div>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">Aug 2024 — Oct 2024</span>
-                </div>
-                    <p class="mt-3 text-sm leading-7 text-neutral-300">Assisting with computer science and programming course for first-year students. Explaining programming concepts and best practices to help students develop foundational skills.</p>
-                    <div class="mt-3 flex flex-wrap gap-2 text-xs">
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Computer Science</span>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Programming</span>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Mentoring</span>
-            </div>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <div class="flex items-start justify-between gap-4">
-                <div>
-                            <h3 class="text-base font-semibold text-white">Freelance Developer (Projects)</h3>
-                            <p class="text-sm text-neutral-300">Self-initiated</p>
-                        </div>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">2024 — Present</span>
-                    </div>
-                    <p class="mt-3 text-sm leading-7 text-neutral-300">Built prototypes and apps like Calendar Curator and SnapTag using Python, Flask, Firebase, and React Native.</p>
-                    <div class="mt-3 flex flex-wrap gap-2 text-xs">
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Python</span>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Flask</span>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">Firebase</span>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-neutral-300">React Native</span>
-                    </div>
-                </article>
-                </div>
-        </section>
-
-        <section id="education" class="scroll-mt-24 py-12 md:py-16">
-            <div class="mb-8 flex items-center justify-between">
-                <h2 class="text-xl font-semibold text-white md:text-2xl">Education</h2>
-            </div>
-            <div class="grid gap-6 md:grid-cols-2">
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <div class="flex items-start justify-between gap-4">
-                <div>
-                            <h3 class="text-base font-semibold text-white">BSc Creative Technology</h3>
-                            <p class="text-sm text-neutral-300">Vrije Universiteit / University of Twente</p>
-                </div>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">2023 — Present</span>
-            </div>
-                    <p class="mt-3 text-sm leading-7 text-neutral-300">Interdisciplinary program combining software, design, and hardware. Coursework includes AI, prototyping, HCI, and creative coding.</p>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <div class="flex items-start justify-between gap-4">
-                <div>
-                            <h3 class="text-base font-semibold text-white">Coderclass (Extracurricular highschool program)</h3>
-                            <p class="text-sm text-neutral-300">Metis Montessori Lyceum Amsterdam</p>
-                        </div>
-                        <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">2017 — 2023</span>
-                    </div>
-                    <p class="mt-3 text-sm leading-7 text-neutral-300">Focused on programming, teamwork, and project-based learning. Built practical skills in multiple languages and tools.</p>
-                </article>
-        </div>
-        </section>
-
-        <section id="about" class="scroll-mt-24 py-12 md:py-16">
-            <div class="mb-8 flex items-center justify-between">
-                <h2 class="text-xl font-semibold text-white md:text-2xl">About</h2>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <h3 class="mb-3 text-base font-semibold text-white">Introduction</h3>
-                <p class="text-sm leading-7 text-neutral-300">I'm Noah, a 20-year-old AI engineer and Creative Technology student at VU/University of Twente with a passion for building innovative solutions. <br><br> My journey in tech began with the intensive 6-year Coderclass program, where I mastered multiple programming languages and software development practices. Currently at university, I collaborate with fellow students to develop creative technological solutions for real-world challenges. <br><br> Beyond coursework, I'm constantly prototyping new ideas and products, applying my skills in both frontend and backend development. My goal is to start my own business where I can innovate and create impactful solutions. I'm already working on several promising projects and actively seeking new opportunities. <br><br> With a foundation that combines strong technical knowledge and hands-on experience with modern development tools and frameworks, I'm well-equipped to tackle complex challenges with creative, effective solutions.</p>
-            </div>
-        </section>
-
-        <section id="resume" class="scroll-mt-24 py-12 md:py-16">
-            <div class="mb-8 flex items-center justify-between">
-                <h2 class="text-xl font-semibold text-white md:text-2xl">Resumé</h2>
-                </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <div class="flex flex-col items-center gap-6 text-center">
-                    <div class="flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-white/5">
-                        <svg class="h-8 w-8 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </svg>
-            </div>
-                <div>
-                        <h3 class="mb-2 text-lg font-semibold text-white">Download my CV</h3>
-                        <p class="mb-4 text-sm text-neutral-300">Get a comprehensive overview of my experience, education, and projects in PDF format.</p>
-                        <button class="rounded-full bg-brand-500 px-6 py-3 text-sm font-medium text-white hover:bg-brand-600" onclick="window.open('./lib/docu/CV.pdf')">
-                            Download PDF
-                        </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <section id="contact" class="scroll-mt-24 py-12 md:py-16">
-            <div class="mb-8 flex items-center justify-between">
-                <h2 class="text-xl font-semibold text-white md:text-2xl">Contact</h2>
-            </div>
-            <div class="grid gap-6 md:grid-cols-2">
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="mb-4 text-base font-semibold text-white">Get in touch</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5">
-                                <svg class="h-5 w-5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-sm font-medium text-white">Email</p>
-                                <a href="mailto:noah.v.potten@gmail.com" class="text-sm text-neutral-300 hover:text-white">noah.v.potten@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5">
-                                <svg class="h-5 w-5 text-neutral-300" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-sm font-medium text-white">X (Twitter)</p>
-                                <a href="https://x.com/noah_vpotten" class="text-sm text-neutral-300 hover:text-white">@noah_vpotten</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5">
-                                <svg class="h-5 w-5 text-neutral-300" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-sm font-medium text-white">GitHub</p>
-                                <a href="https://github.com/Noah-vp/" class="text-sm text-neutral-300 hover:text-white">github.com/Noah-vp</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6 rounded-lg border border-white/10 bg-white/5 p-4">
-                        <p class="text-sm text-neutral-300">Contact me for anything at any time on any platform!</p>
-                    </div>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="mb-4 text-base font-semibold text-white">Location</h3>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5">
-                            <svg class="h-5 w-5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-sm font-medium text-white">Budapest, Hungary</p>
-                            <p class="text-sm text-neutral-300">Available for remote work</p>
-                    </div>
-                </div>
-                    <div class="rounded-lg border border-white/10 bg-white/5 p-4">
-                        <p class="text-sm text-neutral-300">Currently on exchange in Budapest for Creative Technology and working remotely for ADAMI</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    </main>
+    <!-- Main container will be populated by JavaScript -->
+    <main class="mx-auto max-w-6xl px-4"></main>
 
     <footer class="border-t border-white/10 py-10">
-        <div class="mx-auto max-w-6xl px-4">
-            <p class="text-center text-xs text-neutral-400">Font made by <a href="http://www.onlinewebfonts.com" class="underline underline-offset-4">online Web Fonts</a> is licensed by CC BY 3.0</p>
-        </div>
+      <div class="mx-auto max-w-6xl px-4">
+        <p class="text-center text-xs text-neutral-400">
+          Font made by
+          <a
+            href="http://www.onlinewebfonts.com"
+            class="underline underline-offset-4"
+            >online Web Fonts</a
+          >
+          is licensed by CC BY 3.0
+        </p>
+      </div>
     </footer>
 
-    <script>
-        // Smooth scroll + close mobile menu
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                const href = a.getAttribute('href');
-                const el = href && document.querySelector(href);
-                if (!el) return;
-                e.preventDefault();
-                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                const m = document.getElementById('mobile-nav');
-                if (m && !m.classList.contains('hidden')) m.classList.add('hidden');
-            });
-        });
+    <!-- Config Files -->
+    <script src="./js/config/navigation.config.js"></script>
+    <script src="./js/config/hero.config.js"></script>
+    <script src="./js/config/skills.config.js"></script>
+    <script src="./js/config/projects.config.js"></script>
+    <script src="./js/config/experience.config.js"></script>
+    <script src="./js/config/education.config.js"></script>
+    <script src="./js/config/resume.config.js"></script>
+    <script src="./js/config/contact.config.js"></script>
 
-        // Simple active section detection
-        const navLinks = Array.from(document.querySelectorAll('a[data-nav][href^="#"]'));
-        const sections = Array.from(document.querySelectorAll('main section[id]'));
+    <!-- Component Files -->
+    <script src="./js/components/Button.js"></script>
+    <script src="./js/components/SkillPopup.js"></script>
+    <script src="./js/components/SkillCard.js"></script>
+    <script src="./js/components/ProjectPopup.js"></script>
+    <script src="./js/components/ProjectCard.js"></script>
+    <script src="./js/components/ExperienceCard.js"></script>
+    <script src="./js/components/EducationCard.js"></script>
+    <script src="./js/components/ContactItem.js"></script>
+    <script src="./js/components/Navigation.js"></script>
 
-        function updateActiveSection() {
-            const scrollPosition = window.scrollY + window.innerHeight / 2;
-            
-            let activeSection = null;
-            let minDistance = Infinity;
-            
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const sectionTop = rect.top + window.scrollY;
-                const sectionBottom = sectionTop + rect.height;
-                
-                // Check if section is in viewport
-                if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
-                    const distance = Math.abs(scrollPosition - (sectionTop + rect.height / 2));
-                    if (distance < minDistance) {
-                        minDistance = distance;
-                        activeSection = section.id;
-                    }
-                }
-            });
-            
-            if (activeSection) {
-                // Remove active class from all nav links
-                navLinks.forEach(link => {
-                    link.classList.remove('bg-brand-500', 'text-white');
-                    link.classList.add('text-neutral-300');
-                });
-                
-                // Add active class to current section's nav links
-                const currentLinks = navLinks.filter(link => 
-                    link.getAttribute('href') === `#${activeSection}`
-                );
-                currentLinks.forEach(link => {
-                    link.classList.add('bg-brand-500', 'text-white');
-                    link.classList.remove('text-neutral-300');
-                });
-            }
-        }
+    <!-- Section Files -->
+    <script src="./js/sections/HeroSection.js"></script>
+    <script src="./js/sections/SkillsSection.js"></script>
+    <script src="./js/sections/ProjectsSection.js"></script>
+    <script src="./js/sections/ExperienceSection.js"></script>
+    <script src="./js/sections/EducationSection.js"></script>
+    <script src="./js/sections/ResumeSection.js"></script>
+    <script src="./js/sections/ContactSection.js"></script>
 
-        // Update on scroll
-        window.addEventListener('scroll', updateActiveSection);
-        
-        // Update on load
-        window.addEventListener('load', updateActiveSection);
-    </script>
-</body>
+    <!-- Main Script -->
+    <script src="./js/main.js"></script>
+  </body>
 </html>
-
