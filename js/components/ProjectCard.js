@@ -3,8 +3,11 @@ function createProjectCard(project) {
   const article = document.createElement("article");
   article.className = "rounded-2xl border border-white/10 bg-white/5 p-4";
 
+  const mainContainer = document.createElement("div");
+  mainContainer.className = "flex gap-4";
+
   const container = document.createElement("div");
-  container.className = "flex flex-col gap-3";
+  container.className = "flex flex-col gap-3 flex-1";
 
   // Title
   const title = document.createElement("h3");
@@ -39,7 +42,23 @@ function createProjectCard(project) {
   buttonContainer.appendChild(projectButton);
   container.appendChild(buttonContainer);
 
-  article.appendChild(container);
+  mainContainer.appendChild(container);
+
+  // Preview image on the right
+  if (project.preview) {
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "flex-shrink-0 self-start flex items-start";
+    
+    const image = document.createElement("img");
+    image.src = project.preview;
+    image.alt = `${project.title} preview`;
+    image.className = "w-32 h-32 object-cover rounded-lg border border-white/10 aspect-square";
+    
+    imageContainer.appendChild(image);
+    mainContainer.appendChild(imageContainer);
+  }
+
+  article.appendChild(mainContainer);
 
   return article;
 }

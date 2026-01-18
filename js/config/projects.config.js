@@ -7,6 +7,7 @@ const projectsConfig = {
       date: "February 2025 - May 2025 (entrepreneurship project)",
       description:
         "Calendar Curator lets you clean up your synced calendar by picking which events to keep and removing the rest.",
+      preview: "./lib/previews/calendarCurator.png",
       whatIs:
         "Calendar Curator is a web app that helps you clean up your synced calendar feeds, especially for students who import their entire university class schedules. It connects to your live calendar link, lets you pick which events you actually want to keep or ignore, and automatically removes the rest from your calendar.",
       whyBuilt:
@@ -25,6 +26,7 @@ const projectsConfig = {
       date: "November 2024 - February 2025 (bachelor)",
       description:
         "A prototype app that turns physical activity into a photo-based game of tag. Snap a player to tag them; lobbies update in real time.",
+      preview: "./lib/previews/snaptag.png",
       whatIs:
         "SnapTag is a mobile application that combines physical activity with technology by creating a photo-based game of tag. Players use their phones to take photos of other players to tag them, and game lobbies update in real-time.",
       whyBuilt:
@@ -43,7 +45,8 @@ const projectsConfig = {
       title: "CrowdTag",
       date: "September 2024 - December 2024 (entrepreneurship project)",
       description:
-        "We tried to build a business where, after an event, you’d only get the photos you actually appear in. We experimented with different ways to identify people in photos and ended up using facial recognition.",
+        "We tried to build a business where, after an event, you'd only get the photos you actually appear in. We experimented with different ways to identify people in photos and ended up using facial recognition.",
+      preview: "./lib/previews/crowdtag.png",
       whatIs:
         "CrowdTag was a platform that used AI facial recognition to match people to their photos at events. Attendees could join with a code and selfie, and get a personal gallery with only the photos they actually appeared in. We ran both test and pilot events, and got positive feedback in our survey and analytics. People liked not having to search through hundreds of photos.",
       whyBuilt:
@@ -62,6 +65,7 @@ const projectsConfig = {
       date: "February 2024 - April 2024 (bachelor)",
       description:
         "A speech-to-speech chatbot in a physical embodiment, built for Just Eat Takeaway (JET). Includes a custom chatbot interface in pygame and a hardware chassis we designed from scratch.",
+      preview: "./lib/previews/jetbot.png",
       whatIs:
         "JETBOT is a physical interactive agent with a screen and speech-to-speech capability, developed as a university project for the client Just Eat Takeaway (JET). Our team designed and built both the hardware chassis and the conversational agent, integrating a custom chatbot interface in pygame and a real speech-to-speech pipeline.",
       whyBuilt:
@@ -80,6 +84,7 @@ const projectsConfig = {
       date: "July 2022 - January 2023 (highschool)",
       description:
         "Research project exploring the feasibility and complexity of drone delivery, including a working prototype.",
+      preview: "./lib/previews/drone.png",
       whatIs:
         "A comprehensive research project that explores the feasibility and technical challenges of autonomous drone delivery systems. The project includes a working simulation prototype demonstrating route planning, obstacle avoidance, and package delivery.",
       whyBuilt:
@@ -98,6 +103,7 @@ const projectsConfig = {
       date: "July 2022 - August 2023 (highschool)",
       description:
         "A rule-based terrain generator inspired by Wave Function Collapse. Generates maps with adjacency constraints.",
+      preview: "./lib/previews/map.png",
       whatIs:
         "A web-based procedural terrain generator that uses the Wave Function Collapse algorithm to create maps with adjacency constraints. The generator creates coherent, rule-based terrains that respect predefined tile connection rules.",
       whyBuilt:
@@ -116,6 +122,7 @@ const projectsConfig = {
       date: "January 2022 - June 2022 (highschool)",
       description:
         "A 4-player browser battle royale built with Node.js and p5.js.",
+      preview: "./lib/previews/game.png",
       whatIs:
         "A real-time multiplayer battle royale game that runs entirely in the browser. Up to 4 players can join simultaneously and compete in a shared game world with synchronized gameplay.",
       whyBuilt:
@@ -134,6 +141,7 @@ const projectsConfig = {
       date: "August 2022 - January 2022 (highschool)",
       description:
         "Following Ben Eater's series, I implemented an 8-bit ALU on breadboards using discrete ICs.",
+      preview: "./lib/previews/8-bit.png",
       whatIs:
         "An 8-bit Arithmetic Logic Unit (ALU) built entirely on breadboards using discrete integrated circuits. This project demonstrates fundamental computer architecture principles at the hardware level.",
       whyBuilt:
@@ -152,6 +160,7 @@ const projectsConfig = {
       date: "August 2021 - January 2021 (highschool)",
       description:
         "A browser-based AI driving demo where a car learns to avoid obstacles using ray casting and a neural network. Inspired by The Coding Train, with custom mutation and ray-casting functions.",
+      preview: "./lib/previews/car.png",
       whatIs:
         "A browser-based simulation where a neural network learns to control a car and navigate around obstacles. The AI uses ray casting to sense its environment and evolves through a custom genetic algorithm.",
       whyBuilt:
