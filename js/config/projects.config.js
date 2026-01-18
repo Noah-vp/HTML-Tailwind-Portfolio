@@ -33,7 +33,7 @@ const projectsConfig = {
         "As part of a project focused on promoting physical activity and social interaction among youth, we set out to create a game that would get people moving and connecting in creative ways. Using photos as the mechanism for tagging adds a modern, interactive element to the classic game of tag, making it especially appealing and engaging for younger players.",
       technicalDescription:
         "Developed using React Native with Expo for cross-platform mobile development. Firebase Realtime Database handles synchronized game state and lobby management. The app uses device cameras for photo capture and integrates AI for player recognition. Real-time updates ensure all players see the current game state instantly.",
-      demo: "./lib/demos/SnapTag.mp4",
+      demo: "./lib/demos/snaptag.mp4",
       demoIsVideo: true,
       demoAlt: "SnapTag promo video",
       externalLink:
@@ -72,7 +72,7 @@ const projectsConfig = {
         "This project was created for JET as part of a university module, giving us the opportunity to work directly with a real client. We aimed to push our skills in hardware prototyping, conversational AI, custom interface design, and user experience research. We delivered the bot to JET, conducted tests on-site, and used surveys to gain insight into user behavior and improve the system's UX.",
       technicalDescription:
         "We designed and assembled the hardware (including chassis modeling, electronics, and screen integration) and built a Python-based speech-to-speech agent using multiple APIs. The custom chatbot interface was implemented in pygame.",
-      demo: "./lib/demos/jetbot.mp4",
+      demo: "./lib/demos/JETbot.mp4",
       demoIsVideo: true,
       demoAlt: "JETBOT physical agent image",
       externalLink: "./lib/docu/JetBotReport.docx",
