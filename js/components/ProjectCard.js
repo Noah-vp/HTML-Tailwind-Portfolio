@@ -57,9 +57,10 @@ function createProjectCard(project) {
     image.style.minWidth = "128px";
     image.style.minHeight = "128px";
     
-    // Add error handling for broken images
+    // Add error handling for broken images with better debugging
     image.onerror = function() {
       console.error(`Failed to load preview image: ${project.preview}`);
+      console.error(`Full URL attempted: ${window.location.origin}${project.preview.replace(/^\./, '')}`);
       this.style.display = 'none';
     };
     
