@@ -47,12 +47,26 @@ function createProjectCard(project) {
   // Preview image on the right
   if (project.preview) {
     const imageContainer = document.createElement("div");
-    imageContainer.className = "flex-shrink-0 self-start flex items-start";
+    imageContainer.className = "flex-shrink-0 self-start";
     
     const image = document.createElement("img");
     image.src = project.preview;
     image.alt = `${project.title} preview`;
-    image.className = "w-32 h-32 object-cover rounded-lg border border-white/10 aspect-square";
+    image.className = "w-32 h-32 object-cover rounded-lg border border-white/10";
+    image.style.aspectRatio = "1 / 1";
+    image.style.minWidth = "128px";
+    image.style.minHeight = "128px";
+    
+    // Add error handling for broken images
+    image.onerror = function() {
+      console.error(`Failed to load preview image: ${project.preview}`);
+      this.style.display = 'none';
+    };
+    
+    // Debug logging
+    image.onload = function() {
+      console.log(`Successfully loaded preview image: ${project.preview}`);
+    };
     
     imageContainer.appendChild(image);
     mainContainer.appendChild(imageContainer);
