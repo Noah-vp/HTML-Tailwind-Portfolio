@@ -45,18 +45,16 @@ function createProjectCard(project) {
   mainContainer.appendChild(container);
 
   // Preview image on the right
-  if (project.preview) {
-    const imageContainer = document.createElement("div");
-    imageContainer.className = "flex-shrink-0 self-start flex items-start";
-    
-    const image = document.createElement("img");
-    image.src = project.preview;
-    image.alt = `${project.title} preview`;
-    image.className = "w-32 h-32 object-cover rounded-lg border border-white/10 aspect-square";
-    
-    imageContainer.appendChild(image);
-    mainContainer.appendChild(imageContainer);
-  }
+  const imageContainer = document.createElement("div");
+  imageContainer.className = "flex-shrink-0 self-start flex items-start";
+  
+  const image = document.createElement("img");
+  image.src = project.preview;
+  image.alt = `${project.title} preview`;
+  image.className = "w-32 h-32 object-cover rounded-lg border border-white/10 aspect-square";
+  
+  imageContainer.appendChild(image);
+  mainContainer.appendChild(imageContainer);
 
   article.appendChild(mainContainer);
 
